@@ -1,0 +1,65 @@
+.PostContainer{
+    max-width: 768px;
+    height: fit-content;
+    max-height: 500px;
+    border : 1px solid #e2e8f0;
+    border-radius : 12px;
+    display: flex;
+    flex-direction: row;    
+    gap: 16px;
+    transition: all 0.2s ease-out;
+    background-color: white;
+    padding: 0;
+}
+
+
+.PostContainer:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.PostContainer-Internal{
+    width: 768px;
+    max-width: 768px;
+    padding: 16px !important;
+    border-radius : 12px;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between !important;
+    gap: 16px;
+}
+
+
+.PostContainer-Internal-Title{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.PostContainer-Internal-Text{
+    max-height: 300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.PostContainer > img {
+    width: 325px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px 12px 12px 0px;
+}
+
+.PostContainer-Internal-BottomFlex{
+    display: flex;
+    margin-top: auto !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

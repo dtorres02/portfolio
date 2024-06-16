@@ -70,8 +70,8 @@ export default function ButtonAppBar() {
           <Drawer open = {open} onClose = {toggleDrawer(false)}>
             {DrawerList}
           </Drawer>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
+              Header
           </Typography>
         </Toolbar>
       </AppBar>
