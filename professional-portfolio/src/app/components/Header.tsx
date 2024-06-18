@@ -36,7 +36,7 @@ export default function ButtonAppBar() {
         <List>
           {['Home','About Me', 'Projects', 'Education', 'Contact Me'].map((text, index) =>
             <ListItem key = {text} disablePadding>
-              <Link to = {text === 'Home' ? '/' : `/${text.toLowerCase().replace(' ', '')}`} style = {{textDecoration: 'none'}}
+              <Link to = {text === '' ? '/' : `/${text.toLowerCase().replace(' ', '')}`} style = {{textDecoration: 'none'}}
               >
               <ListItemButton>
                 <ListItemIcon>
