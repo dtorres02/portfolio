@@ -71,7 +71,7 @@ export default function ButtonAppBar() {
             {DrawerList}
           </Drawer>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
-              Header
+              Derik
           </Typography>
         </Toolbar>
       </AppBar>

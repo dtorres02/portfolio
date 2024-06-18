@@ -1,8 +1,9 @@
 // Imported Components
 import Header from "../Header";
 import '../css/Post.css';
+import '../css/MainPage.css'
 
-
+import Chip from '@mui/material/Chip';
 
 interface Entry {
 
@@ -25,25 +26,54 @@ export default function MainPage() {
 
 export function HomePage() {
 
-    const dummyEntry: Entry = {
-        title: "COMP468 Machine Learning Model",
-        desc: 'Influenced by the release of ChatGPT and an increase in use amongst college students in academia we wanted to build a model to work on understanding the overall sentiment of AI as a whole.',
-        date: '03/04/2002',
-        category: ['english class', 'history', 'your mom']
-    };
-
+    const entries = [
+        {
+            title: "Forestr",
+            desc: "Envvironmental awareness website spreading information about deforestation in the Northern American Regions.",
+            date: '11/18/2023',
+            category: ['Environmental', 'Web Development', 'Frontend']
+        },
+        {
+            title: "Senior Individualized Project (Senior Thesis)",
+            desc: "Applying linear algebraic properties to the adjacency matrices of complete graphs to find the properties of the eigenvalues.",
+            date: '12/12/2024',
+            category: ['Research', 'Mathematics', 'Graph Theory']
+        },
+        {
+            title: "Kraigslist",
+            desc: "Functioning community board website made by K Students for K Students",
+            date: '11/24/2022',
+            category: ['Web Development', 'Software Development', 'Backend']
+        },
+        {
+            title: "Tweet Sentiment Analysis Model",
+            desc: "Twitter Sentement Model able to predict the concensus and attitute of ChatGPT for the given time frame of 2023 and prior.",
+            date: '03/16/2023',
+            category: ['Machine Learning', 'Data Analysis']
+        },
+        {
+            title: "SLOOM Website",
+            desc: "The SLOOM website and backend using Bun JS and React.",
+            date: '06/12/2024',
+            category: ['Web Development', 'Frontend', 'Backend']
+        }
+    ]
 
 
     return(
-        <>
-            <Entry
-                title = {dummyEntry.title}
-                desc = {dummyEntry.desc}
-                date = {dummyEntry.date}
-                category= {dummyEntry.category}
-            >
-            </Entry>
-        </>
+        <div className="MainPageContainer">
+            
+
+            {entries.map( item => (
+                <Entry
+                    title = {item.title}
+                    desc = {item.desc}
+                    date = {item.date}
+                    category= {item.category}
+                >
+                </Entry>
+            ))}
+        </div>
     )
 };
 
@@ -62,12 +92,17 @@ function Entry(entry: Entry): JSX.Element {
                     {entry.desc}
                 </text>
                 <div className="PostContainer-Internal-BottomFlex">
-                    <h2>
-                        {entry.category}
-                    </h2>
-                    <h2>
-                        {entry.date}
-                    </h2>
+                    <ul>
+                        {entry.category.map(item =>
+                            <Chip
+                            label = {item}
+                            sx = {{m: 0.5}}
+                            />
+                        )}
+                    </ul>
+                    <p>
+                       Last Worked On: {entry.date}
+                    </p>
                 </div>
             </div>
         </div>
