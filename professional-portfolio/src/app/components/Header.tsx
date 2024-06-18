@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import { ListItemButton, ListItemIcon, ListItem, ListItemText } from '@mui/material';
+import { Link } from "react-router-dom";
 
 // Icon Imports from mui
 import SchoolIcon from '@mui/icons-material/school';
@@ -33,8 +34,10 @@ export default function ButtonAppBar() {
     const DrawerList = (
       <Box sx = {{width: 250}} role = "presentation" onClick = {toggleDrawer(false)}>
         <List>
-          {['Home','About Me', 'Projects', 'Education', 'Social Media'].map((text, index) =>
+          {['Home','About Me', 'Projects', 'Education', 'Contact Me'].map((text, index) =>
             <ListItem key = {text} disablePadding>
+              <Link to = {text === 'Home' ? '/' : `/${text.toLowerCase().replace(' ', '')}`} style = {{textDecoration: 'none'}}
+              >
               <ListItemButton>
                 <ListItemIcon>
                   {index === 0 && <HomeIcon/>}
@@ -45,6 +48,7 @@ export default function ButtonAppBar() {
                 </ListItemIcon>
                 <ListItemText primary = {text}/>
               </ListItemButton>
+              </Link>
             </ListItem>
           )}
         </List>

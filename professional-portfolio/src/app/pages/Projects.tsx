@@ -1,5 +1,5 @@
 // Imported Components
-import Header from "../Header";
+import Header from "../components/Header";
 import '../css/Post.css';
 import '../css/MainPage.css'
 
@@ -14,7 +14,7 @@ interface Entry {
 
 }
 
-export default function MainPage() {
+export default function Projects() {
     return(
         <>
             <Header/>
